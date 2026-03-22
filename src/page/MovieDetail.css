@@ -1,0 +1,221 @@
+.movie-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: var(--text-main);
+}
+
+.movie-header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .movie-header-section {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.movie-poster-large {
+  width: 100%;
+  max-width: 320px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  margin: 0 auto;
+  flex-shrink: 0;
+  border: 4px solid var(--surface);
+}
+
+.movie-poster-large img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-info-large {
+  flex: 1;
+}
+
+.movie-detail-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.movie-detail-origin {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.movie-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  background: var(--surface);
+  padding: 25px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meta-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.movie-description {
+  background: var(--surface);
+  padding: 35px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.movie-description h2 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+}
+
+.movie-description h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), #ff9ff3);
+  border-radius: 2px;
+}
+
+.movie-description-content {
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.episode-section {
+  background: var(--surface);
+  padding: 35px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 50px;
+}
+
+.episode-section h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.episode-btn {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.episode-btn:hover {
+  background: rgba(255, 71, 87, 0.1);
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(255, 71, 87, 0.15);
+}
+
+.episode-btn.active {
+  background: linear-gradient(135deg, var(--primary) 0%, #ff6b81 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+}
+
+.video-section {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #000;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border: 4px solid var(--surface);
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .movie-detail-title {
+    font-size: 2rem;
+  }
+  
+  .movie-poster-large {
+    max-width: 250px;
+  }
+  
+  .movie-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-meta-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .episode-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .movie-description {
+    padding: 20px;
+  }
+  
+  .episode-section {
+    padding: 20px;
+  }
+}
